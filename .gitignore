@@ -1,0 +1,224 @@
+# ==============================================================================
+# SmartExam – Git Ignore Configuration
+# Covers: Python/FastAPI backend, React/TypeScript web, Android/Kotlin app,
+#         MySQL scripts, documentation, and all developer environments.
+# ==============================================================================
+
+# ==============================================================================
+# SECRETS AND CREDENTIALS — NEVER COMMIT THESE
+# ==============================================================================
+.env
+.env.*
+*.env
+!*.env.example
+
+# TLS / SSL certificates and private keys
+*.pem
+*.key
+*.crt
+*.cer
+*.csr
+*.pfx
+*.p12
+*.der
+
+# Android keystore and signing files
+*.jks
+*.keystore
+release-keystore.properties
+signing.properties
+keystore.properties
+
+# Encryption key files
+backend/app/core/keys/
+*.aes
+*.key.bin
+
+# Google Services (if ever added)
+google-services.json
+GoogleService-Info.plist
+
+# ==============================================================================
+# PYTHON / FASTAPI BACKEND
+# ==============================================================================
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env/
+backend/.venv/
+backend/venv/
+
+# Python bytecode cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+
+# Distribution / packaging
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
+lib/
+lib64/
+
+# Pytest cache and coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+.mypy_cache/
+
+# Alembic environment file (may contain DB URL)
+# alembic.ini — keep tracked, but never commit real credentials inside it
+
+# ==============================================================================
+# NODE.JS / REACT / TYPESCRIPT WEB PORTAL
+# ==============================================================================
+
+node_modules/
+web/node_modules/
+
+# Production build output
+web/build/
+web/dist/
+web/.next/
+web/out/
+
+# npm / yarn / pnpm
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# TypeScript incremental build info
+*.tsbuildinfo
+web/tsconfig.tsbuildinfo
+
+# Vite cache
+web/.vite/
+
+# ==============================================================================
+# ANDROID / KOTLIN APPLICATION
+# ==============================================================================
+
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+android/.navigation/
+
+# Generated files
+android/app/src/main/assets/databases/
+android/gradle-wrapper.jar
+
+# Android Keystore (redundant with above, explicit for safety)
+android/app/*.jks
+android/app/*.keystore
+
+# ==============================================================================
+# MYSQL / DATABASE
+# ==============================================================================
+
+# Local database dump files
+*.sql.gz
+*.sql.bak
+database/backups/
+database/dumps/
+
+# ==============================================================================
+# LOGS
+# ==============================================================================
+
+*.log
+logs/
+backend/logs/
+web/logs/
+
+# ==============================================================================
+# OPERATING SYSTEM FILES
+# ==============================================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# macOS (if any contributor uses a Mac)
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Linux
+*~
+
+# ==============================================================================
+# IDE / EDITOR CONFIGURATION
+# ==============================================================================
+
+# JetBrains IDEs (Android Studio, PyCharm, IntelliJ)
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+.idea_modules/
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+!.vscode/extensions.json
+
+# Vim
+*.swp
+*.swo
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+
+# Emacs
+*~
+\#*\#
+.emacs.desktop
+.emacs.desktop.lock
+
+# ==============================================================================
+# MISCELLANEOUS
+# ==============================================================================
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.orig
+*.rej
+
+# Archive files
+*.zip
+*.tar.gz
+*.rar
+*.7z
+
+# Test/scratch data with sensitive content
+scratch/
+test_uploads/
+temp_uploads/
